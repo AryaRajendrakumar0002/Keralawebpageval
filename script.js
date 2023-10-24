@@ -2,7 +2,10 @@ let email=document.getElementById("email");
 let password=document.getElementById("password");
 let error=document.getElementById("error");
 
-
+let smallRegexp =/[a-z]/ ;
+let upperRegexp =/[A-Z]/ ;
+let numberRegexp =/[0-9]/ ;
+let speciaRegexp =/[!@#$%^&*]/;
 
 function validate(){
     let status=false;
@@ -49,10 +52,7 @@ function validate(){
      }
 
 
-     let smallRegexp =/[a-z]/ ;
-     let upperRegexp =/[A-Z]/ ;
-     let numberRegexp =/[0-9]/ ;
-     let speciaRegexp =/[!@#$%^&*]/;
+   
      document.getElementById("pwderror").style.display = "none";
      if (!smallRegexp.test(password.value)){
          document.getElementById("pwderror").style.display = "inline";
@@ -115,6 +115,36 @@ function validate(){
 
       return status;
 
+
+}
+
+function passwordStrenght(){
+    document.getElementById("phoneerror").style.display = "none";
+    if (!smallRegexp.test(password.value)){
+     
+        password.style.color = "red";
+        
+        return false;
+    }
+    if (!upperRegexp.test(password.value)){
+        password.style.color = "red";
+        return false;
+    }
+    if (!numberRegexp.test(password.value)){
+        password.style.color = "orange";
+        return false;
+    }
+    if (!speciaRegexp.test(password.value)){
+        password.style.color = "orange";
+        return false;
+    }
+   let pwdRegexp =/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+   if (!pwdRegexp.test(password.value)){
+    password.style.color = "green";
+         return false;
+
+        
+     }
 
 }
 
