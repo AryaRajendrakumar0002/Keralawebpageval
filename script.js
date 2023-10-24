@@ -106,7 +106,6 @@ function validate(){
           document.getElementById("phoneerror").style.display = "inline";
           phoneerror.innerHTML = "Please provide a valid  phone Number";
           phoneerror.style.color = "red";
-          phone.style.color="green"
           return false;
       }else{
         document.getElementById("phoneerror").style.display = "none";
@@ -119,7 +118,7 @@ function validate(){
 }
 
 function passwordStrenght(){
-    document.getElementById("phoneerror").style.display = "none";
+    document.getElementById("pwderror").style.display = "none";
     if (!smallRegexp.test(password.value)){
      
         password.style.color = "red";
@@ -138,8 +137,8 @@ function passwordStrenght(){
         password.style.color = "orange";
         return false;
     }
-   let pwdRegexp =/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
-   if (!pwdRegexp.test(password.value)){
+   
+   if (password.value.length>8){
     password.style.color = "green";
          return false;
 
@@ -149,3 +148,6 @@ function passwordStrenght(){
 }
 
 
+function removeError(){
+    document.getElementById("error").style.display = "none";
+}
