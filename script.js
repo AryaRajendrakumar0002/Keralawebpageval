@@ -92,41 +92,11 @@ function validate(){
           status=true;
           
       }
+
+      
       return status;
 
 
 }
 
-function pwdValidation(){
-    let smallRegexp =/[a-z]/ ;
-    let upperRegexp =/[A-Z]/ ;
-    let numberRegexp =/[0-9]/ ;
-    let speciaRegexp =/[!@#$%^&*]/;
-    document.getElementById("pwderror").style.display = "none";
-    if (!smallRegexp.test(password.value)){
-        document.getElementById("pwderror").style.display = "inline";
-        pwderror.innerHTML = "password must have atleast a lowercase characters";
-        pwderror.style.color = "red";
-        return false;
-    }
-    if (!upperRegexp.test(password.value)){
-        document.getElementById("pwderror").style.display = "inline";
-        pwderror.innerHTML = "password must have atleast a Uppercase characters";
-        pwderror.style.color = "red";
-        return false;
-    }
-    if (!numberRegexp.test(password.value)){
-        document.getElementById("pwderror").style.display = "inline";
-        pwderror.innerHTML = "password must have atleast a  Number";
-        pwderror.style.color = "red";
-        return false;
-    }
-    if (!speciaRegexp.test(password.value)){
-        document.getElementById("pwderror").style.display = "inline";
-        pwderror.innerHTML = "password must have atleast a  Special charactor";
-        pwderror.style.color = "red";
-        return false;
-    }
-    return true;
-}
 
