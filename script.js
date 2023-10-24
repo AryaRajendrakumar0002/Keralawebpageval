@@ -106,6 +106,7 @@ function validate(){
           document.getElementById("phoneerror").style.display = "inline";
           phoneerror.innerHTML = "Please provide a valid  phone Number";
           phoneerror.style.color = "red";
+          phone.style.color="green"
           return false;
       }else{
         document.getElementById("phoneerror").style.display = "none";
