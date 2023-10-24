@@ -93,7 +93,20 @@ function validate(){
           
       }
 
-      
+
+      let phoneRegexp=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+      if(!phoneRegexp.test(phone.value)){
+          
+          document.getElementById("phoneerror").style.display = "inline";
+          phoneerror.innerHTML = "Phone Number should be in XXX-XXX-XXXX";
+          phoneerror.style.color = "red";
+          return false;
+      }else{
+        document.getElementById("phoneerror").style.display = "none";
+        status=true;
+      }
+
       return status;
 
 
