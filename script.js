@@ -138,7 +138,7 @@ function passwordStrenght(){
         return false;
     }
    
-   if (password.value.length>8){
+   if (password.value.length>7){
     password.style.color = "green";
          return false;
 
