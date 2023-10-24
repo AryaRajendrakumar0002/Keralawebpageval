@@ -21,8 +21,9 @@ function validate(){
     
     if(!regexp.test(email.value)){
         document.getElementById("error").style.display= "inline";
-        error.innerHTML = "invalid";
+        error.innerHTML = "Please provide a valid email";
         error.style.color = "red";
+        email.focus();
        
         return false;
     }else{
@@ -37,7 +38,7 @@ function validate(){
          // password.style.border="2px solid red";
          pwderror.innerHTML = "password is mandatory";
          pwderror.style.color = "red";
-        
+         password.focus();
          return false;
 
         
@@ -57,24 +58,28 @@ function validate(){
          document.getElementById("pwderror").style.display = "inline";
          pwderror.innerHTML = "password must have atleast a lowercase characters";
          pwderror.style.color = "red";
+         password.focus();
          return false;
      }
      if (!upperRegexp.test(password.value)){
          document.getElementById("pwderror").style.display = "inline";
          pwderror.innerHTML = "password must have atleast a Uppercase characters";
          pwderror.style.color = "red";
+         password.focus();
          return false;
      }
      if (!numberRegexp.test(password.value)){
          document.getElementById("pwderror").style.display = "inline";
          pwderror.innerHTML = "password must have atleast a  Number";
          pwderror.style.color = "red";
+         password.focus();
          return false;
      }
      if (!speciaRegexp.test(password.value)){
          document.getElementById("pwderror").style.display = "inline";
          pwderror.innerHTML = "password must have atleast a  Special charactor";
          pwderror.style.color = "red";
+         password.focus();
          return false;
      }
     let pwdRegexp =/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
@@ -83,7 +88,7 @@ function validate(){
           // password.style.border="2px solid red";
           pwderror.innerHTML = "password field must have atleast 8 characters";
           pwderror.style.color = "red";
-         
+          password.focus();
           return false;
 
          
@@ -97,9 +102,9 @@ function validate(){
       let phoneRegexp=/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
       if(!phoneRegexp.test(phone.value)){
-          
+        phone.focus();
           document.getElementById("phoneerror").style.display = "inline";
-          phoneerror.innerHTML = "Phone Number should be in XXX-XXX-XXXX";
+          phoneerror.innerHTML = "Please provide a valid  phone Number";
           phoneerror.style.color = "red";
           return false;
       }else{
